@@ -1,3 +1,5 @@
+//finite state machine
+
 module fsm(in,rst,clk,out);
 input rst, clk;
 input in;
@@ -21,20 +23,47 @@ case(presentstate)
 s0:
 if (~in) 
   begin
-    nextstate<=s0;
-    out<=0;
+    nextstate<=s0;   
+    out<=0;   
   end
 else begin
   nextstate<=s1;
+  out<=0;//
+end
+ 
+s1:
+ if (~in) begin
+   nextstate<=s1;
+   out<=0;
+ end
+ 
+ else begin
+   nextstate<=s2;
+   out<=1;
+ end
+    
+s2:
+ if (~in) begin
+   nextstate<=s2;
+   out<=0;
+ end 
+ else begin
+   nextstate<=s3;
+   out<=1;
+ end
+ 
+ s3:
+  if (~in) begin
+    nextstate<=s3;
+    out<=1;
+  end
+else begin
+  nextstate<=s0;
   out<=0;
 end
-
-s1:
-if (~in)
-  
-    
-  
-  
-  
-  
+endcase
 endmodule
+  
+  
+  
+  
