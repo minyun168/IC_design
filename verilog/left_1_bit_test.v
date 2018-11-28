@@ -17,6 +17,6 @@ initial
 		#500 $stop;
 	end
 	
-	left_1_bit_test m(.din(din),.clk(clk),.clr(clr),.dout(dout));
+	left_1_bit m(.din(din),.clk(clk),.clr(clr),.dout(dout));
 	
 endmodule
