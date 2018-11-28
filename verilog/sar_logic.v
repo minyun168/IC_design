@@ -21,25 +21,24 @@ always@(posedge clk)
 		c0:
 		begin
 			count=3'b000;
-			dout=6'b000000;
+			dout=6'b100000;
 			if(ena)
 				begin
 					count<=count+1;
-
 				end
 			else
 				begin
 					dout=dout;
 					count=c0;
 				end
-			c=dout;
+			q=dout;
 		end
 	
 		c1:
 			begin
 			
-			dout[5]<=0;
-			dout[4]<=0;
+			dout[5]<=comp;
+			dout[4]<=1;
 			dout[3]<=0;
 			dout[2]<=0;
 			dout[1]<=0;
@@ -51,6 +50,35 @@ always@(posedge clk)
 		c2:
 			begin
 
+			dout[5]<=comp;
+			dout[4]<=1;
+			dout[3]<=0;
+			dout[2]<=0;
+			dout[1]<=0;
+			dout[0]<=0;
 
+			count<=c3;
+
+			end
+
+		c3:
+			begin
+
+			dout[5]<=dout[5];
+			dout[4]<=comp;
+			dout[3]<=1;
+			dout[2]<=0;
+			dout[1]<=0;
+			dout[0]<=0;
+
+			count<=c4;
+
+			end
+
+		c4:
+			begin
+
+			dout[5]
+			end
 
 		
