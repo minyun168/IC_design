@@ -118,7 +118,7 @@ always@(posedge clk)
 			dout[1]<=dout[1];
 			dout[0]<=comp;
 
-			count<=cout+1;
+			count<=count+1;
 
 			end
 
@@ -137,3 +137,4 @@ endmodule
 
 
 		
+
