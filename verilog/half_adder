@@ -1,0 +1,13 @@
+//half adder
+
+module half_adder(a,b,c,d,s,c);
+
+input a,b;
+output s,c;
+
+//wire s,c;
+
+assign s = a&(~b)+b&(~a);
+assign c = a&b;
+
+endmodule
