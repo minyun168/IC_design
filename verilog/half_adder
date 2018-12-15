@@ -7,7 +7,7 @@ output s,c;
 
 //wire s,c;
 
-assign s = a&(~b)+b&(~a);
+assign s = a&(~b)+b&(~a);  //or s = a^b??
 assign c = a&b;
 
 endmodule
